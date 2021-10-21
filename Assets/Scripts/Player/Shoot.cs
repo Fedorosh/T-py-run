@@ -6,10 +6,6 @@ public class Shoot : MonoBehaviour
 {
     [SerializeField] GameObject pool;
     public float shootSpeed;
-    void Start()
-    {
-        
-    }
 
     public bool IsInPool()
     {
@@ -29,9 +25,5 @@ public class Shoot : MonoBehaviour
             rb.AddForce(new Vector2(shootSpeed, 0),ForceMode2D.Impulse);
 
         }//Perform 
-    }
-    void Update()
-    {
-        
     }
 }
