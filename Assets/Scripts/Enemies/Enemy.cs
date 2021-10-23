@@ -9,7 +9,8 @@ public class Enemy : MonoBehaviour
     public float speed;
     private void Kill(Collider2D collision)
     {
-        Destroy(collision.gameObject);
+        GameController.InvokePlayerDied();
+        collision.gameObject.SetActive(false);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

@@ -32,7 +32,6 @@ public class EnemySpawner : MonoBehaviour
         instance.enemyPool[i].InvokeEnemyDied(enemy);
     }
 
-
     public void SpawnEnemy()
     {
         int rand = Random.Range(0, 3);
