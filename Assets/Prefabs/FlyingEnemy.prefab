@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &7042629011763066875
+--- !u!1001 &9130457602587206895
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -8,12 +8,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 393128515605316939, guid: c3268a1e33ca4aa48ad8823d5ec739c7, type: 3}
-      propertyPath: isObstacle
-      value: 1
+      propertyPath: speed
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 393128515605316944, guid: c3268a1e33ca4aa48ad8823d5ec739c7, type: 3}
       propertyPath: m_Name
-      value: Obstacle
+      value: FlyingEnemy
       objectReference: {fileID: 0}
     - target: {fileID: 393128515605316944, guid: c3268a1e33ca4aa48ad8823d5ec739c7, type: 3}
       propertyPath: m_IsActive
@@ -21,7 +21,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 393128515605316944, guid: c3268a1e33ca4aa48ad8823d5ec739c7, type: 3}
       propertyPath: m_TagString
-      value: Enemy2
+      value: Enemy3
       objectReference: {fileID: 0}
     - target: {fileID: 393128515605316950, guid: c3268a1e33ca4aa48ad8823d5ec739c7, type: 3}
       propertyPath: m_RootOrder
@@ -29,11 +29,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 393128515605316950, guid: c3268a1e33ca4aa48ad8823d5ec739c7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.04
+      value: -0.5927863
       objectReference: {fileID: 0}
     - target: {fileID: 393128515605316950, guid: c3268a1e33ca4aa48ad8823d5ec739c7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.385
+      value: -1.8059876
       objectReference: {fileID: 0}
     - target: {fileID: 393128515605316950, guid: c3268a1e33ca4aa48ad8823d5ec739c7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -69,15 +69,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 393128515605316951, guid: c3268a1e33ca4aa48ad8823d5ec739c7, type: 3}
       propertyPath: m_Color.b
-      value: 0
+      value: 0.6137046
       objectReference: {fileID: 0}
     - target: {fileID: 393128515605316951, guid: c3268a1e33ca4aa48ad8823d5ec739c7, type: 3}
       propertyPath: m_Color.g
-      value: 0.6896947
+      value: 0.08597367
       objectReference: {fileID: 0}
     - target: {fileID: 393128515605316951, guid: c3268a1e33ca4aa48ad8823d5ec739c7, type: 3}
       propertyPath: m_Color.r
-      value: 0.9150943
+      value: 0.7924528
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3268a1e33ca4aa48ad8823d5ec739c7, type: 3}

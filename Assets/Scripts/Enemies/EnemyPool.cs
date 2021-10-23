@@ -6,13 +6,13 @@ public class EnemyPool : MonoBehaviour
 {
     public Transform enemyStartPoint;
     public delegate void EnemyDied(Enemy enemy);
-    public static event EnemyDied OnEnemyDied;
+    public event EnemyDied OnEnemyDied;
     private void Awake()
     {
         OnEnemyDied += HandleDeadEnemy;
     }
 
-    public static void InvokeEnemyDied(Enemy enemy)
+    public void InvokeEnemyDied(Enemy enemy)
     {
         OnEnemyDied?.Invoke(enemy);
     }

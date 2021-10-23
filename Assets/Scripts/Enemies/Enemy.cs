@@ -16,15 +16,15 @@ public class Enemy : MonoBehaviour
     {
         if(collision.gameObject.layer == LayerMask.NameToLayer("Shot"))
         {
-            if(!isObstacle)
+            CheckIfBackToPool.InvokeBackToPool(collision.gameObject);
+            if (!isObstacle)
             {
-                CheckIfBackToPool.InvokeBackToPool(collision.gameObject);
-                EnemyPool.InvokeEnemyDied(this);
+                EnemySpawner.KillEnemy(this);
             }
         }
         if (collision.gameObject.layer == LayerMask.NameToLayer("DeathWall"))
         {
-            EnemyPool.InvokeEnemyDied(this);
+            EnemySpawner.KillEnemy(this);
 
         }
         if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))

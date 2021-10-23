@@ -19,9 +19,10 @@ public class Jump : MonoBehaviour
     {
         if(IsOnTheGround)
         {
-            playerRigidbody.AddForce(new Vector2(0, jumpHeight),ForceMode2D.Impulse);
+            playerRigidbody.AddForce(Vector2.up * jumpHeight, ForceMode2D.Impulse);
             IsOnTheGround = false;
         }
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
