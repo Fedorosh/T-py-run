@@ -1887,7 +1887,23 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1788583235}
           m_TargetAssemblyTypeName: Jump, Assembly-CSharp
-          m_MethodName: PerformJump
+          m_MethodName: StartJumping
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1788583235}
+          m_TargetAssemblyTypeName: Jump, Assembly-CSharp
+          m_MethodName: StopJumping
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -3857,7 +3873,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67b673ca260558043bb066906886c402, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpHeight: 5
+  jumpHeight: 1.5
+  jumpSpeed: 3
+  minimalJumpOffset: 10
 --- !u!114 &1788583236
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3871,7 +3889,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pool: {fileID: 1779451512}
-  shootSpeed: 10
+  shootSpeed: 7
 --- !u!1 &1799912246
 GameObject:
   m_ObjectHideFlags: 0
