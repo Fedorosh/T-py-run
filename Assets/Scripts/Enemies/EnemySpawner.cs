@@ -26,10 +26,10 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
-    public static void KillEnemy(Enemy enemy)
+    public static void KillEnemy(Enemy enemy, bool byPlayer)
     {
         int i = (enemy.tag[enemy.tag.Length - 1] - '0') - 1;
-        instance.enemyPool[i].InvokeEnemyDied(enemy);
+        instance.enemyPool[i].InvokeEnemyDied(enemy,byPlayer);
     }
 
     public void SpawnEnemy()

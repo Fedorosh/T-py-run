@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
     private bool isAlive = false;
     public bool isObstacle = false;
     public float speed;
+    public int score = 100;
     private void Kill(Collider2D collision)
     {
         GameController.InvokePlayerDied();
@@ -20,12 +21,12 @@ public class Enemy : MonoBehaviour
             CheckIfBackToPool.InvokeBackToPool(collision.gameObject);
             if (!isObstacle)
             {
-                EnemySpawner.KillEnemy(this);
+                EnemySpawner.KillEnemy(this, true);
             }
         }
         if (collision.gameObject.layer == LayerMask.NameToLayer("DeathWall"))
         {
-            EnemySpawner.KillEnemy(this);
+            EnemySpawner.KillEnemy(this, false);
 
         }
         if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))

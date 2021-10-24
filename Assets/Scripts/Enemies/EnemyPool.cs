@@ -5,21 +5,19 @@ using UnityEngine;
 public class EnemyPool : MonoBehaviour
 {
     public Transform enemyStartPoint;
-    public delegate void EnemyDied(Enemy enemy);
+    public delegate void EnemyDied(Enemy enemy, bool byPlayer);
     public event EnemyDied OnEnemyDied;
     private void Awake()
     {
         OnEnemyDied += HandleDeadEnemy;
+        OnEnemyDied += GameController.GetScoreOnEnemyDied;
     }
 
-    public void InvokeEnemyDied(Enemy enemy)
+    public void InvokeEnemyDied(Enemy enemy, bool byPlayer)
     {
-        OnEnemyDied?.Invoke(enemy);
+        OnEnemyDied?.Invoke(enemy,byPlayer);
     }
-
-
-
-    private void HandleDeadEnemy(Enemy enemy)
+    private void HandleDeadEnemy(Enemy enemy, bool byPlayer)
     {
         enemy.transform.SetParent(transform);
         enemy.gameObject.SetActive(false);

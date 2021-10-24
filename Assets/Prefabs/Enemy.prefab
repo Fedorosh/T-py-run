@@ -137,3 +137,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isObstacle: 0
   speed: 2
+  score: 50
