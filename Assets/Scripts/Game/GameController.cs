@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
@@ -9,6 +11,7 @@ public class GameController : MonoBehaviour
 
     [SerializeField] private GameObject gameOverScreen;
     [SerializeField] private GameObject player;
+    [SerializeField] private Button[] controls;
     void Start()
     {
         OnPlayerDied += PauseOnPlayerDied;
@@ -22,7 +25,12 @@ public class GameController : MonoBehaviour
     public void OnRetryClicked()
     {
         gameOverScreen.SetActive(false);
-        player.SetActive(true);    //SpawnEnemy
+        player.SetActive(true);
+        foreach (var x in controls)
+        {
+            x.GetComponent<EventTrigger>().enabled = true;
+            x.interactable = true;
+        }
         KillAllEnemies();
         Time.timeScale = 1f;
     }
@@ -40,6 +48,11 @@ public class GameController : MonoBehaviour
     private void PauseOnPlayerDied()
     {
         gameOverScreen.SetActive(true);
+        foreach (var x in controls)
+        {
+            x.GetComponent<EventTrigger>().enabled = false;
+            x.interactable = false;
+        }
         Time.timeScale = 0f;
     }
 
