@@ -1415,7 +1415,7 @@ MonoBehaviour:
   - {fileID: 1925637640}
   - {fileID: 212680088}
   - {fileID: 2089304069}
-  spawnFrequency: 2
+  spawnFrequency: 100000
   seed: 45
 --- !u!4 &526330514
 Transform:
