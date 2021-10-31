@@ -52,6 +52,10 @@ public class GameController : MonoBehaviour
         Time.timeScale = 1f;
     }
 
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
     private void KillAllEnemies()
     {
         List<Enemy> enemyList = new List<Enemy>();
