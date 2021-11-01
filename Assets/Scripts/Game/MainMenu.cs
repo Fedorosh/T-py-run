@@ -14,4 +14,9 @@ public class MainMenu : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void EnableDisableSound(bool sound)
+    {
+        AudioListener.pause = !sound;
+    }
 }
