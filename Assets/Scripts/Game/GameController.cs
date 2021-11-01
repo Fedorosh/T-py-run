@@ -6,12 +6,20 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
+public enum Musics
+{
+    gameplay,
+    gameOver
+}
+
 public class GameController : MonoBehaviour
 {
     public delegate void PlayerDied();
     public static event PlayerDied OnPlayerDied;
 
     private static GameController instance;
+    private AudioSource source;
+    [SerializeField] private AudioClip[] clips;
     [SerializeField] private GameObject gameOverScreen;
     [SerializeField] private GameObject player;
     [SerializeField] private Button[] controls;
@@ -20,7 +28,9 @@ public class GameController : MonoBehaviour
     void Start()
     {
         instance = this;
+        source = GetComponent<AudioSource>();
         OnPlayerDied += PauseOnPlayerDied;
+        OnPlayerDied += ChangeMusicOver;
     }
 
     public static void GetScoreOnEnemyDied(Enemy enemy, bool byPlayer)
@@ -38,6 +48,20 @@ public class GameController : MonoBehaviour
         OnPlayerDied?.Invoke();
     }
 
+    public void ChangeMusicOver()
+    {
+        if (source.isPlaying) source.Stop();
+        source.clip = clips[(int)Musics.gameOver];
+        source.Play();
+    }
+
+    public void ChangeMusicPlay()
+    {
+        if (source.isPlaying) source.Stop();
+        source.clip = clips[(int)Musics.gameplay];
+        source.Play();
+    }
+
     public void OnRetryClicked()
     {
         gameOverScreen.SetActive(false);
@@ -49,6 +73,7 @@ public class GameController : MonoBehaviour
             x.interactable = true;
         }
         KillAllEnemies();
+        ChangeMusicPlay();
         Time.timeScale = 1f;
     }
 
