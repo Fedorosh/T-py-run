@@ -52,6 +52,7 @@ public class GameController : MonoBehaviour
     {
         if (source.isPlaying) source.Stop();
         source.clip = clips[(int)Musics.gameOver];
+        source.loop = false;
         source.Play();
     }
 
@@ -59,6 +60,7 @@ public class GameController : MonoBehaviour
     {
         if (source.isPlaying) source.Stop();
         source.clip = clips[(int)Musics.gameplay];
+        source.loop = true;
         source.Play();
     }
 
