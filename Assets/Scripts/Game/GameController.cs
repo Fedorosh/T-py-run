@@ -25,6 +25,9 @@ public class GameController : MonoBehaviour
     [SerializeField] private Button[] controls;
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private TextMeshProUGUI scoreTextOnGameOver;
+    [SerializeField] private GameObject highScoreText;
+
+    private int bestScore = 0;
     void Start()
     {
         instance = this;
@@ -97,6 +100,13 @@ public class GameController : MonoBehaviour
     {
         gameOverScreen.SetActive(true);
         scoreTextOnGameOver.text = "Your " + scoreText.text;
+        int potentialBest = int.Parse(Regex.Match(scoreText.text, @"\d+").Value);
+        if(potentialBest > bestScore) 
+        {
+            bestScore = potentialBest;
+            highScoreText.SetActive(true);
+        }
+        else if(highScoreText.activeSelf) highScoreText.SetActive(false);
         scoreText.text = "Score: 0";
         scoreText.gameObject.SetActive(false);
         foreach (var x in controls)
