@@ -30,6 +30,7 @@ public class GameController : MonoBehaviour
     private int bestScore = 0;
     void Start()
     {
+        bestScore = PlayerPrefs.GetInt("HighScore",0);
         instance = this;
         source = GetComponent<AudioSource>();
         OnPlayerDied += PauseOnPlayerDied;
@@ -86,6 +87,13 @@ public class GameController : MonoBehaviour
     {
         Application.Quit();
     }
+
+    private void OnApplicationQuit()
+    {
+        PlayerPrefs.SetInt("HighScore", bestScore);
+    }
+
+
     private void KillAllEnemies()
     {
         List<Enemy> enemyList = new List<Enemy>();
