@@ -27,7 +27,7 @@ public class GameController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI scoreTextOnGameOver;
     [SerializeField] private GameObject highScoreText;
 
-    private int bestScore = 0;
+    private int bestScore;
     void Start()
     {
         bestScore = PlayerPrefs.GetInt("HighScore",0);
