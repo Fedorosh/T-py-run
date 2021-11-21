@@ -8,6 +8,8 @@ public class Enemy : MonoBehaviour
     public bool isObstacle = false;
     public float speed;
     public int score = 100;
+
+    public int EnemyPoolIndex { get; set; } = 0;
     private void Kill(Collider2D collision)
     {
         GameController.InvokePlayerDied();

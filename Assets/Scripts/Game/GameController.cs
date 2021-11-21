@@ -29,7 +29,11 @@ public class GameController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI scoreTextOnGameOver;
     [SerializeField] private GameObject highScoreText;
 
+    public float timeScaler = 0.001f;
+
     private int bestScore;
+
+    private bool isPlaying = true;
     void Start()
     {
         bestScore = PlayerPrefs.GetInt("HighScore",0);
@@ -73,6 +77,7 @@ public class GameController : MonoBehaviour
     public void OnRetryClicked()
     {
         gameOverScreen.SetActive(false);
+        isPlaying = true;
         scoreText.gameObject.SetActive(true);
         player.SetActive(true);
         foreach (var x in controls)
@@ -109,6 +114,7 @@ public class GameController : MonoBehaviour
     private void PauseOnPlayerDied()
     {
         gameOverScreen.SetActive(true);
+        isPlaying = false;
         scoreTextOnGameOver.text = "Your " + scoreText.text;
         int potentialBest = int.Parse(Regex.Match(scoreText.text, @"\d+").Value);
         if(potentialBest > bestScore) 
@@ -125,5 +131,14 @@ public class GameController : MonoBehaviour
             x.interactable = false;
         }
         Time.timeScale = 0f;
+    }
+
+    private void Update()
+    {
+        if(isPlaying)
+        {
+            Time.timeScale += Time.unscaledDeltaTime * timeScaler;
+        }
+        Debug.Log(Time.timeScale);
     }
 }

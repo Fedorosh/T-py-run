@@ -1477,7 +1477,6 @@ MonoBehaviour:
   - {fileID: 2089304069}
   - {fileID: 2034889575}
   spawnFrequency: 1.5
-  seed: 21
 --- !u!4 &526330514
 Transform:
   m_ObjectHideFlags: 0
@@ -2565,6 +2564,7 @@ MonoBehaviour:
   scoreText: {fileID: 45336986}
   scoreTextOnGameOver: {fileID: 38516225}
   highScoreText: {fileID: 1677269269}
+  timeScaler: 0.015
 --- !u!82 &803012041
 AudioSource:
   m_ObjectHideFlags: 0

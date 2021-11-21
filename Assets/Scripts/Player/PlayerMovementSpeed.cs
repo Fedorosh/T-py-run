@@ -24,9 +24,9 @@ public class PlayerMovementSpeed : MonoBehaviour
         if (isGrounded && velocity.y < 0)
             velocity.y = -2f;
 
-        velocity.y += gravity * Time.deltaTime;
+        velocity.y += gravity * Time.unscaledDeltaTime;
 
-        if(!isGrounded) transform.Translate(velocity * Time.deltaTime);
+        if(!isGrounded) transform.Translate(velocity * Time.unscaledDeltaTime);
 
     }
 

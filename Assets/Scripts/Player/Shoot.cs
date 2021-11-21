@@ -22,7 +22,7 @@ public class Shoot : MonoBehaviour
             rb.gameObject.SetActive(true);
             rb.transform.SetParent(null);
             rb.transform.SetPositionAndRotation(transform.position, transform.rotation);
-            rb.AddForce(new Vector2(shootSpeed, 0),ForceMode2D.Impulse);
+            rb.AddForce(new Vector2(shootSpeed / Time.timeScale, 0),ForceMode2D.Impulse);
 
         }//Perform 
     }

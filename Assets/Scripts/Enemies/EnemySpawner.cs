@@ -11,6 +11,9 @@ public class EnemySpawner : MonoBehaviour
     private int seed;
     void Start()
     {
+        for (int i = 0; i < enemyPool.Length; i++)
+            foreach (var y in enemyPool[i].GetComponentsInChildren<Enemy>(true))
+                y.EnemyPoolIndex = i;
         seed = Random.Range(0, 1001);
         instance = this;
         timer = 0;
@@ -29,8 +32,7 @@ public class EnemySpawner : MonoBehaviour
 
     public static void KillEnemy(Enemy enemy, bool byPlayer)
     {
-        int i = (enemy.tag[enemy.tag.Length - 1] - '0') - 1;
-        instance.enemyPool[i].InvokeEnemyDied(enemy,byPlayer);
+        instance.enemyPool[enemy.EnemyPoolIndex].InvokeEnemyDied(enemy,byPlayer);
     }
 
     public void SpawnEnemy()
