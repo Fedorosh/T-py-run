@@ -34,7 +34,7 @@ public class EnemySpawner : MonoBehaviour
 
     public void SpawnEnemy()
     {
-        int rand = Random.Range(0, 3);
+        int rand = Random.Range(0, enemyPool.Length);
         if (enemyPool[rand].transform.childCount <= 0) return;
             GameObject obj = enemyPool[rand].transform.GetChild(0).gameObject;
         obj.transform.SetParent(null);
