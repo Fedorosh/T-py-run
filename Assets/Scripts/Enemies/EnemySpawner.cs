@@ -8,9 +8,10 @@ public class EnemySpawner : MonoBehaviour
     private static EnemySpawner instance;
     public float spawnFrequency;
     float timer;
-    public int seed;
+    private int seed;
     void Start()
     {
+        seed = Random.Range(0, 1001);
         instance = this;
         timer = 0;
         Random.InitState(seed);

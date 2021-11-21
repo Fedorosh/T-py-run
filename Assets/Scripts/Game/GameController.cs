@@ -17,6 +17,8 @@ public class GameController : MonoBehaviour
     public delegate void PlayerDied();
     public static event PlayerDied OnPlayerDied;
 
+
+
     private static GameController instance;
     private AudioSource source;
     [SerializeField] private AudioClip[] clips;
