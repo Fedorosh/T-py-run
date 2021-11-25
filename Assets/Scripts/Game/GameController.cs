@@ -95,7 +95,7 @@ public class GameController : MonoBehaviour
         Application.Quit();
     }
 
-    private void OnApplicationQuit()
+    private void OnApplicationPause()
     {
         PlayerPrefs.SetInt("HighScore", bestScore);
     }
