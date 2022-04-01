@@ -21,7 +21,7 @@ public class PlayerMovementSpeed : MonoBehaviour
     void Update()
     {
 
-        if (isGrounded && velocity.y < 0)
+        if (isGrounded && velocity.y < 0) 
             velocity.y = -2f;
 
         velocity.y += gravity * Time.unscaledDeltaTime;
@@ -36,7 +36,6 @@ public class PlayerMovementSpeed : MonoBehaviour
         {
             isGrounded = false;
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
-
         }
     }
 
