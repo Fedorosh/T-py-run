@@ -4,18 +4,14 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField] private EnemyPool[] enemyPool;
-    private static EnemySpawner instance;
+    private readonly string[] enemyType = 
+    { "FlyingEnemy","FlyingObject","Enemy","Object" };
     public float spawnFrequency;
     float timer;
     private int seed;
     void Start()
     {
-        for (int i = 0; i < enemyPool.Length; i++)
-            foreach (var y in enemyPool[i].GetComponentsInChildren<Enemy>(true))
-                y.EnemyPoolIndex = i;
         seed = Random.Range(0, 1001);
-        instance = this;
         timer = 0;
         Random.InitState(seed);
     }
@@ -26,22 +22,17 @@ public class EnemySpawner : MonoBehaviour
         if (timer >= spawnFrequency)
         {
             SpawnEnemy();
-            timer = 0f;
+            timer -= spawnFrequency;
         }
     }
-
-    public static void KillEnemy(Enemy enemy, bool byPlayer)
-    {
-        instance.enemyPool[enemy.EnemyPoolIndex].InvokeEnemyDied(enemy,byPlayer);
-    }
-
     public void SpawnEnemy()
     {
-        int rand = Random.Range(0, enemyPool.Length);
-        if (enemyPool[rand].transform.childCount <= 0) return;
-            GameObject obj = enemyPool[rand].transform.GetChild(0).gameObject;
-        obj.transform.SetParent(null);
-        obj.transform.SetPositionAndRotation(enemyPool[rand].enemyStartPoint.position, enemyPool[rand].enemyStartPoint.rotation);
-        obj.SetActive(true);
+        int rand = Random.Range(0, enemyType.Length);
+        GameObject obj = Pool.instance.Get(enemyType[rand]);
+        if(obj != null)
+        {
+            obj.transform.SetPositionAndRotation(transform.position, transform.rotation);
+            obj.SetActive(true);
+        }
     }
 }

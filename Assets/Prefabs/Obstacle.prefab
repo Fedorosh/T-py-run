@@ -21,11 +21,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 393128515605316944, guid: c3268a1e33ca4aa48ad8823d5ec739c7, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 393128515605316944, guid: c3268a1e33ca4aa48ad8823d5ec739c7, type: 3}
       propertyPath: m_TagString
-      value: Enemy2
+      value: Object
       objectReference: {fileID: 0}
     - target: {fileID: 393128515605316950, guid: c3268a1e33ca4aa48ad8823d5ec739c7, type: 3}
       propertyPath: m_RootOrder

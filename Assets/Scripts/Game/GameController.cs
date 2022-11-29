@@ -106,7 +106,7 @@ public class GameController : MonoBehaviour
         {
             if (x.transform.parent == null) enemyList.Add(x);
         }
-        enemyList.ForEach((x) => EnemySpawner.KillEnemy(x, false));
+        enemyList.ForEach((x) => x.gameObject.SetActive(false));
     }
 
     private void PauseOnPlayerDied()
