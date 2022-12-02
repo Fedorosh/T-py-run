@@ -12,10 +12,28 @@ public class PlayerMovementSpeed : MonoBehaviour
     public LayerMask groundMask;
 
     Vector3 velocity;
+    private Vector3 firstPos;
     bool isGrounded;
     bool isJumping = false;
 
+
     float jumpCounter;
+
+    private void Start()
+    {
+        firstPos = transform.position;
+    }
+
+    public void ResetPlayer()
+    {
+        transform.position = firstPos;
+        transform.rotation = Quaternion.identity;
+    }
+
+    private void OnBecameInvisible()
+    {
+        GameController.InvokePlayerDied();
+    }
 
     void Update()
     {

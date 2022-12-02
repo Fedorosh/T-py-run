@@ -27,6 +27,7 @@ public class GameController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI scoreTextOnGameOver;
     [SerializeField] private GameObject highScoreText;
 
+
     private int bestScore;
 
     private bool isPlaying = true;
@@ -75,6 +76,7 @@ public class GameController : MonoBehaviour
         gameOverScreen.SetActive(false);
         isPlaying = true;
         scoreText.gameObject.SetActive(true);
+        player.GetComponent<PlayerMovementSpeed>().ResetPlayer();
         player.SetActive(true);
         foreach (var x in controls)
         {
