@@ -8,23 +8,18 @@ public class EnemySpawner : MonoBehaviour
 
     private readonly string[] enemyType = 
     { "FlyingEnemy","FlyingObject","Enemy","Object" };
-    public float spawnFrequency;
-    float timer;
     private int seed;
     void Start()
     {
         seed = Random.Range(0, 1001);
-        timer = 0;
         Random.InitState(seed);
     }
 
     void Update()
     {
-        timer += Time.deltaTime;
-        if (timer >= spawnFrequency)
+        if (Random.Range(0,1000) < 10)
         {
             SpawnEnemy();
-            timer -= spawnFrequency;
         }
     }
     public void SpawnEnemy()
