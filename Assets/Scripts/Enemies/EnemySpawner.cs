@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
+    [SerializeField] private Vector3 groundPos;
+
     private readonly string[] enemyType = 
     { "FlyingEnemy","FlyingObject","Enemy","Object" };
     public float spawnFrequency;
@@ -32,6 +34,7 @@ public class EnemySpawner : MonoBehaviour
         if(obj != null)
         {
             obj.transform.position = transform.position;
+            if (!enemyType[rand].Contains("Flying")) obj.transform.position += groundPos;
             obj.SetActive(true);
         }
     }

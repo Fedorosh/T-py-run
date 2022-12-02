@@ -757,6 +757,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af0c64906ae6b5043a921b6e7b3fab9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  groundPos: {x: 0, y: -0.98, z: 0}
   spawnFrequency: 1.5
 --- !u!4 &526330514
 Transform:
