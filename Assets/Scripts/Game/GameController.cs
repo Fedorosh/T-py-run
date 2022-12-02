@@ -27,8 +27,6 @@ public class GameController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI scoreTextOnGameOver;
     [SerializeField] private GameObject highScoreText;
 
-    public float timeScaler = 0.001f;
-
     private int bestScore;
 
     private bool isPlaying = true;
@@ -129,14 +127,5 @@ public class GameController : MonoBehaviour
             x.interactable = false;
         }
         Time.timeScale = 0f;
-    }
-
-    private void Update()
-    {
-        if(isPlaying)
-        {
-            Time.timeScale += Time.unscaledDeltaTime * timeScaler;
-        }
-        Debug.Log(Time.timeScale);
     }
 }

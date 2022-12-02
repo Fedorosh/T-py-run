@@ -9,7 +9,6 @@ public class PlayerMovementSpeed : MonoBehaviour
     public float jumpHeight = 3f;
 
     public Transform groundCheck;
-    public float groundDistance = 0.4f;
     public LayerMask groundMask;
 
     Vector3 velocity;
@@ -21,12 +20,12 @@ public class PlayerMovementSpeed : MonoBehaviour
     void Update()
     {
 
-        if (isGrounded && velocity.y < 0) 
+        if (isGrounded && velocity.y < 0)
             velocity.y = -2f;
 
-        velocity.y += gravity * Time.unscaledDeltaTime;
+        velocity.y += gravity * Time.deltaTime;
 
-        if(!isGrounded) transform.Translate(velocity * Time.unscaledDeltaTime);
+        if (!isGrounded) transform.Translate(velocity * Time.deltaTime,Space.World);
 
     }
 

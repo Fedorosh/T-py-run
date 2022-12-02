@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7391227787937439874}
   - component: {fileID: 7391227787937439885}
   - component: {fileID: 7391227787937439875}
-  - component: {fileID: 2109952273979545344}
+  - component: {fileID: 9170128379045935624}
   m_Layer: 7
   m_Name: Shot
   m_TagString: Shot
@@ -27,8 +27,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7391227787937439884}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.433, y: 0.529, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.01, z: 1}
+  m_LocalPosition: {x: -0.43949, y: 0.53874, z: 0}
+  m_LocalScale: {x: 0.38701603, y: 0.029475098, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.9528302, g: 0.9035963, b: 0, a: 1}
   m_FlipX: 0
@@ -112,24 +112,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 4.7985673}
   m_EdgeRadius: 0
---- !u!50 &2109952273979545344
-Rigidbody2D:
-  serializedVersion: 4
+--- !u!114 &9170128379045935624
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7391227787937439884}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f64d216d45272bc4e91c4d22d6df8944, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  direction: {x: 1, y: 0, z: 0}
+  moveSpeed: 5

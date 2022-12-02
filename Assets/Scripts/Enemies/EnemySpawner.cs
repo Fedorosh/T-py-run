@@ -31,7 +31,7 @@ public class EnemySpawner : MonoBehaviour
         GameObject obj = Pool.instance.Get(enemyType[rand]);
         if(obj != null)
         {
-            obj.transform.SetPositionAndRotation(transform.position, transform.rotation);
+            obj.transform.position = transform.position;
             obj.SetActive(true);
         }
     }
