@@ -534,6 +534,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Scores
       objectReference: {fileID: 0}
+    - target: {fileID: 3787528468545821062, guid: b269fbc7553b0f043ba79ea0af8816ca, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9a5bb22352a198f46b30ed4ad3af06c9, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b269fbc7553b0f043ba79ea0af8816ca, type: 3}
 --- !u!224 &513835638 stripped
@@ -1123,7 +1127,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9fc9cc14509486744a629ac65c94810d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b0023bbe01f4e64409f01de8f0510054, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1615,6 +1619,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Quit
       objectReference: {fileID: 0}
+    - target: {fileID: 3787528468545821062, guid: b269fbc7553b0f043ba79ea0af8816ca, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9a5bb22352a198f46b30ed4ad3af06c9, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b269fbc7553b0f043ba79ea0af8816ca, type: 3}
 --- !u!224 &1872353310 stripped
@@ -1721,5 +1729,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: NewGame
       objectReference: {fileID: 0}
+    - target: {fileID: 3787528468545821062, guid: b269fbc7553b0f043ba79ea0af8816ca, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9a5bb22352a198f46b30ed4ad3af06c9, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b269fbc7553b0f043ba79ea0af8816ca, type: 3}
