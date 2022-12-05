@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BackgroundController : MonoBehaviour
+public class BackgroundAnimator : MonoBehaviour
 {
     [SerializeField] private float speed = 0.5f;
     private Renderer thisRenderer;
+
     void Start()
     {
         thisRenderer = GetComponent<Renderer>();
